@@ -1,2 +1,2 @@
-# Breakable-tutorial
- Breakable Godot example
+# Explosion-tutorial
+Explosion Godot example
