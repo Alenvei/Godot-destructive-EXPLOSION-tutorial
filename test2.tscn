@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scences/box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scences/bottle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scences/Bomb.tscn" type="PackedScene" id=4]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.113725, 0.113725, 0.137255, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="bomb" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.35635, 2.72957, -0.383293 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 165.324, 0, 0, 0, 0.192757, 0, 0, 0, 195.139, 0, 0, -170.51 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.735565, 0.677454, 0, -0.677454, 0.735565, -2.356, 22.058, 26.258 )
+far = 8192.0
+
+[node name="box" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -4.24414, 1.1526, -0.335558 )
+
+[node name="box2" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.600262, 1.1526, -0.335558 )
+
+[node name="box5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.29635, 4.76042, -0.335558 )
+
+[node name="box3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -2.41365, 1.1526, 2.26517 )
+
+[node name="box4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.41365, 1.1526, -2.7517 )
+
+[node name="bottle" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.316313, 4.28082, 0 )
+
+[node name="bottle2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.40155, 4.28082, 0 )
+
+[node name="bottle3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38914, 7.56522, -0.245023 )
